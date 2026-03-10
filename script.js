@@ -15,12 +15,32 @@ const heartsContainer = document.querySelector(".hearts");
 const confettiCanvas = document.getElementById("confetti");
 const ctx = confettiCanvas.getContext("2d");
 
+const musicBtn = document.getElementById("musicBtn");
+const bgMusic = document.getElementById("bgMusic");
+
 let audioContext = null;
 let analyser = null;
 let microphoneSource = null;
 let micStream = null;
 let detectInterval = null;
 let alreadyBlown = false;
+let musicPlaying = false;
+
+musicBtn.addEventListener("click", async function () {
+  try {
+    if (!musicPlaying) {
+      await bgMusic.play();
+      musicPlaying = true;
+      musicBtn.textContent = "pausar música 🎶";
+    } else {
+      bgMusic.pause();
+      musicPlaying = false;
+      musicBtn.textContent = "poner música 🎶";
+    }
+  } catch (error) {
+    console.error("No se pudo reproducir el audio:", error);
+  }
+});
 
 function showScreen(screenToShow) {
   introScreen.classList.remove("active");
