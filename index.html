@@ -3,41 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Feliz Cumpleaños Etnyy! 🎀</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=DM+Serif+Display&display=swap"
     rel="stylesheet"
   />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="bg-decor">
+    <span class="float-item">🎀</span>
+    <span class="float-item">✨</span>
+    <span class="float-item">💗</span>
+    <span class="float-item">🌷</span>
+    <span class="float-item">🎂</span>
+    <span class="float-item">✨</span>
+  </div>
+
   <div class="hearts"></div>
 
-  <main class="wrapper">
-    <section class="card">
-      <div class="sparkles">✨ 💗 🎀 ✨</div>
-
-      <h1 id="title">toca para empezar 🎀</h1>
-      <p id="subtitle">tengo un mensaje para ti</p>
-
-      <button id="surpriseBtn">NEXT ✨</button>
-
-      <div id="finalMessage" class="hidden final-box">
-        <h2>feliz cumpleaños bb💗</h2>
-        <p>
-Quería aprovechar este momento para decirte algo que a veces no digo tanto: gracias por estar en mi vida.
-contigo he pasado momentos muy importantes y también me has acompañado en etapas difíciles que logré superar.
-
-Tu amistad significa mucho para mí, más de lo que a veces sé expresar.
-y si alguna vez te fallé o no estuve a la altura, perdón. sigo aprendiendo cada día a ser un mejor amigo.
-
-Gracias por todo lo que hemos vivido y por todo lo que aún nos queda por compartir. 🎀
+  <main class="app">
+    <!-- PANTALLA 1 -->
+    <section id="screen-intro" class="screen active">
+      <div class="card intro-card">
+        <div class="badge">para Etnyy 🎀</div>
+        <div class="intro-emoji">💌</div>
+        <h1 class="main-title">tengo una sorpresa para ti</h1>
+        <p class="main-subtitle">
+          no es una sorpresa cualquiera... así que tócala con calma ✨
         </p>
+
+        <button id="startBtn" class="primary-btn">
+          abrir sorpresa
+        </button>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2 -->
+    <section id="screen-cake" class="screen">
+      <div class="card cake-card">
+        <div class="badge">mini dinámica 🎂</div>
+        <h2 class="section-title">pide un deseo y sopla las velas</h2>
+        <p class="section-subtitle">
+          primero permite el micrófono. si no detecta el soplido, abajo puedes apagarlas manualmente.
+        </p>
+
+        <div class="cake-wrap">
+          <div class="cake-title">blow out the candles ✨</div>
+
+          <div class="cake-scene">
+            <div class="cake-plate"></div>
+
+            <div class="cake">
+              <div class="icing"></div>
+
+              <div class="candles">
+                <div class="candle" data-candle="1">
+                  <div class="flame"></div>
+                </div>
+                <div class="candle" data-candle="2">
+                  <div class="flame"></div>
+                </div>
+                <div class="candle" data-candle="3">
+                  <div class="flame"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="blowIndicator" class="blow-indicator hidden">
+            soplido detectado ✨
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button id="enableMicBtn" class="primary-btn">
+            permitir micrófono
+          </button>
+          <button id="manualBlowBtn" class="secondary-btn">
+            apagar velas manualmente
+          </button>
+        </div>
+
+        <p id="micStatus" class="helper-text">
+          listo para comenzar 🎀
+        </p>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3 -->
+    <section id="screen-letter" class="screen">
+      <div class="card letter-card">
+        <div class="sparkles">✨ 💗 🎀 ✨</div>
+
+        <h2 class="letter-title">feliz cumpleaños ✨</h2>
+        <p class="letter-subtitle">
+          mereces un día bonito, tranquilo y lleno de cosas lindas 🌷
+        </p>
+
+        <div class="final-box">
+          <p>
+            Quería aprovechar este momento para decirte algo que a veces no digo tanto:
+            gracias por estar en mi vida.
+          </p>
+
+          <p>
+            Contigo he pasado momentos muy importantes y también me has acompañado
+            en etapas difíciles que logré superar.
+          </p>
+
+          <p>
+            Tu amistad significa mucho para mí, más de lo que a veces sé expresar.
+          </p>
+
+          <p>
+            Y si alguna vez te fallé o no estuve a la altura, perdón.
+            Sigo aprendiendo cada día a ser un mejor amigo.
+          </p>
+
+          <p>
+            Gracias por todo lo que hemos vivido y por todo lo que aún nos queda por compartir. 🎀
+          </p>
+        </div>
+
+        <button id="replayBtn" class="primary-btn small-btn">
+          volver a ver sorpresa
+        </button>
       </div>
     </section>
   </main>
